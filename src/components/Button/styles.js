@@ -6,11 +6,12 @@ export const StyledButton = styled.button`
   min-height: 64px;
   box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #ffffff;
   border-radius: 17px;
-  font-size: 2.6rem;
+  font-size: 2rem;
   line-height: 110%;
   padding: 15px 6px;
   letter-spacing: 0.02em;
-  font-variant: small-caps;
+  text-transform: uppercase;
+  margin-top: 20px;
   :hover {
     background: #e2e6e9;
     box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #ffffff;
