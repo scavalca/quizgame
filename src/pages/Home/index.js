@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
-import { Container } from './styles';
+import { Container, Input, Label } from './styles';
 
 const Home = () => {
   const [registerNickname, setRegisterNickname] = useState('');
@@ -16,6 +16,9 @@ const Home = () => {
 
   const handleStartGame = (event) => {
     event.preventDefault();
+    if (!registerNickname) {
+      return;
+    }
     history.push('/game');
   };
 
@@ -29,19 +32,21 @@ const Home = () => {
         <div>
           <h1>Movies Quiz</h1>
         </div>
+        <Button onClick={handleModal}>
+          start game
+        </Button>
       </Container>
-      <Button onClick={handleModal}>
-        start game
-      </Button>
       <Modal isShowing={isShowing}>
         <form onSubmit={handleStartGame}>
-          <input
-            type="text"
-            placeholder="Type your nickname"
-            onChange={handleChange}
-            value={registerNickname}
-          />
-          <h2>Cadastre seu nickname</h2>
+          <Label>
+            Insert your name
+            <Input
+              type="text"
+              placeholder="type your nickname"
+              onChange={handleChange}
+              value={registerNickname}
+            />
+          </Label>
           <Button>
             Play
           </Button>
