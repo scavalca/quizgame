@@ -1,24 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 import { Container, Input, Label } from './styles';
 
+import { setNickname } from '../../store/actions/game';
+
 const Home = () => {
-  const [registerNickname, setRegisterNickname] = useState('');
+  const { nickname } = useSelector((state) => state.game);
   const [isShowing, setIsShowing] = useState(false);
 
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const handleChange = (event) => {
-    setRegisterNickname(event.target.value);
+    dispatch(setNickname(event.target.value));
   };
 
   const handleStartGame = (event) => {
     event.preventDefault();
-    if (!registerNickname) {
+    if (!nickname) {
       return;
     }
+    localStorage.setItem('NICKNAME', nickname);
     history.push('/game');
   };
 
@@ -44,7 +49,7 @@ const Home = () => {
               type="text"
               placeholder="type your nickname"
               onChange={handleChange}
-              value={registerNickname}
+              value={nickname}
             />
           </Label>
           <Button>
