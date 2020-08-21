@@ -17,7 +17,6 @@ export default createGlobalStyle`
     color: #2A2A2A;
     width: 100vw;
     max-width: 100%;
-    /* min-height: 100vh; */
     font-family: 'Work Sans', sans-serif;
     background-color: #ECF0F3;
   }
