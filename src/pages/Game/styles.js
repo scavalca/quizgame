@@ -2,12 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
-    height: 100vh;
     align-items: center;
     justify-content: space-evenly;
 `;
 
-export const Question = styled.div`
+export const Header = styled.header`
+    font-size: 2.6rem;
+    text-align: center;
+    margin: 80px 0;
+`;
+
+export const Question = styled.article`
     display: block;
     padding: 0 50px;
     height: 300px;
