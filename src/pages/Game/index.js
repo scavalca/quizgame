@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { fetchTriviaQuestions } from '../../services/api';
 import {
-  Container, Question, Answers,
+  Container, Question, Answers, Radio,
 } from './styles';
 import Button from '../../components/Button';
 import Modal from '../../components/Modal';
@@ -53,6 +53,7 @@ const Game = () => {
     setResults(shuffle([...results]));
     setCurrentQuestionIndex(0);
     setIsGameOver(false);
+    setCheckedAnswer('');
   };
 
   const quitGame = () => {
@@ -63,26 +64,28 @@ const Game = () => {
     <>
       <Container>
         <Question>
-          <h2>{results[currentQuestionIndex].question}</h2>
+          <p>{results[currentQuestionIndex].question}</p>
         </Question>
-        <form onSubmit={handleSubmitAnswer}>
+
+        <Answers onSubmit={handleSubmitAnswer}>
           {results[currentQuestionIndex].answers.map((answer) => (
-            <React.Fragment key={answer}>
-              <input
+            <label key={answer} htmlFor="answer">
+              <Radio
                 type="radio"
                 name="answer"
+                checked={answer === checkedAnswer ? 'checked' : ''}
                 onChange={() => setCheckedAnswer(answer)}
               />
-              <label htmlFor="answer">{answer}</label>
-            </React.Fragment>
+              {`  ${answer}`}
+            </label>
           ))}
           <Button>check answer</Button>
-        </form>
+        </Answers>
       </Container>
       <Modal isShowing={isGameOver}>
-        <p>Voce perdeu</p>
-        <Button onClick={quitGame}>Abandonar o jogo</Button>
-        <Button onClick={restartGame}>Reiniciar</Button>
+        <h2>You lost!</h2>
+        <Button onClick={quitGame}>quit game</Button>
+        <Button onClick={restartGame}>restart</Button>
       </Modal>
     </>
   );
