@@ -8,7 +8,27 @@ export const Container = styled.div`
   margin-top: -150px;
   width: 300px;
   height: 300px;
-    
+
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 17px;
+  font-size: 1.8rem;
+  background-color: #ECF0F3;
+
+  form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  }
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
   ${(props) => (props.isShowing
     ? css`
       opacity: 1;
