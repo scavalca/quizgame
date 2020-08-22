@@ -36,22 +36,29 @@ git clone https://github.com/scavalca/quizgame
 yarn
 ```
 
-3. Run the app
+3. Run server and app
 
 ```sh
 yarn start
 ```
 
-4. Make sure the following port is available:
+4. Make sure the following both ports are available:
 
 ```sh
-PORT: 3000.
+3000, 2020
 ```
 
 5. Access the application through the following link afer doing the steps 1 - 4.
 
 ```sh
 http://localhost:3000/
+```
+
+6. If you want yoy can run server and app separately by runing:
+
+```sh
+yarn server
+yarn dev
 ```
 
 <!-- CONTACT -->
