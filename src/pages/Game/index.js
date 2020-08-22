@@ -9,6 +9,7 @@ import Button from '../../components/Button';
 import Modal from '../../components/Modal';
 
 import { setNickname } from '../../store/actions/game';
+import formatDataFromApi from '../../helpers/formatDataFromApi';
 
 const Game = () => {
   const { nickname } = useSelector((state) => state.game);
@@ -25,7 +26,7 @@ const Game = () => {
   useEffect(() => {
     const handleApiResponse = async () => {
       const response = await fetchTriviaQuestions();
-      setResults(response.data);
+      setResults(formatDataFromApi(response.data.results));
       setIsLoading(false);
     };
     handleApiResponse();

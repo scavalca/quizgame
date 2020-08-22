@@ -1,3 +1,3 @@
 import axios from 'axios';
 
-export const fetchTriviaQuestions = async () => axios.get('http://localhost:2020/results');
+export const fetchTriviaQuestions = async () => axios.get('https://opentdb.com/api.php?amount=50&category=11');
