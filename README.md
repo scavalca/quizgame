@@ -7,8 +7,10 @@ The challenge was to create a quiz movie where the player is supposed to choose 
 ### Built With:
 
 - [ReactJS](https://pt-br.reactjs.org/) - React. js is an open-source JavaScript library that is used for building user interfaces.
+- [React router](https://reactrouter.com/) - React Router is a collection of navigational components that compose declaratively with your application.
 - [Styled Components](https://styled-components.com/) - Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress.
 - [Redux](https://redux.js.org/) - Redux is a predictable state container for JavaScript applications.
+- [Json server](https://github.com/typicode/json-server) - Get a full fake REST API with zero coding in less than 30 seconds.
 
 <!-- GETTING STARTED -->
 
